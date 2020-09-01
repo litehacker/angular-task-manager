@@ -1,1 +1,99 @@
-<p>task-view works!</p>
+<div class="container">
+    <div class="navbar p-0">
+        <ul class="nav">
+            <li class="pr-2 py-2 rounded-top "><a class="btn btn-outline-light active border-top-left-radius" data-toggle="tab" href="#daily">Bugünkü</a></li>
+            <li class="p-2"><a class="btn btn-outline-light" data-toggle="tab" href="#weekly">Haftalık</a></li>
+            <li class="p-2"><a class="btn btn-outline-light" data-toggle="tab" href="#monthly">Aylık</a></li>
+        </ul>
+        <ul class="nav ml-auto">
+            
+            <li class=""><a class="btn btn-outline-light btn-circle btn-md font-weight-bold" data-toggle="modal" data-target="#newTaskModal">+</a></li>
+        </ul>
+    </div>
+    
+    <div class="tab-content bg-light container rounded">
+        <div id="daily" class="tab-pane in active">
+            <h3>HOME</h3>
+            <p>Some content.</p>
+        </div>
+        <div id="weekly" class="tab-pane fade">
+            <h3>Menu 1</h3>
+            <p>Some content in menu 1.</p><p>Some content in menu 1.</p><p>Some content in menu 1.</p><p>Some content in menu 1.</p><p>Some content in menu 1.</p>
+        </div>
+        <div id="monthly" class="tab-pane fade">
+            <div class="card-deck mb-3 text-center pt-3">
+                <!-- Component of a task starts here-->
+                <div class="card mb-4 box-shadow" style="min-width: 10rem; max-width: 15rem;">
+                    <div class="card-header">
+                        <img src="../../../assets/img/undraw_detailed_analysis_xn7y.svg" class="card-img-top"  style="max-height: 100px;" alt="gorev gorseli"/>
+                    </div>
+                    <div class="card-body d-flex flex-column">  
+                        <h6 class="font-weight-light text-secondary">2 days left</h6>
+                        <h2 class="card-title ">Gorev Basligi</h2>
+                        <p>Bu gorev icerigi ve kisa aciklamasidir.</p>
+                        <button type="button" class="btn btn-lg btn-block btn-outline-primary mt-auto">Incele</button>
+                    </div>
+                </div>       
+                <div class="card mb-4 box-shadow" style="min-width: 10rem; max-width: 15rem;">
+                    <div class="card-header">
+                        <img src="../../../assets/img/undraw_detailed_analysis_xn7y.svg" class="card-img-top"  style="max-height: 100px;" alt="gorev gorseli"/>
+                    </div>
+                    <div class="card-body d-flex flex-column">  
+                        <h6 class="font-weight-light text-secondary">2 days left</h6>
+                        <h2 class="card-title ">Gorev Basligi</h2>
+                        <p>Bu gorev icerigi ve kisa aciklamasidir.</p>
+                        <button type="button" class="btn btn-lg btn-block btn-outline-primary mt-auto">Incele</button>
+                    </div>
+                </div>       
+                <!-- Component of a task ENDS here-->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL module-->
+<div class="modal fade" id="newTaskModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-4">.col-md-4</div>
+                <div class="col-md-4 ml-auto">.col-md-4 .ml-auto</div>
+              </div>
+              <div class="row">
+                <div class="col-md-3 ml-auto">.col-md-3 .ml-auto</div>
+                <div class="col-md-2 ml-auto">.col-md-2 .ml-auto</div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 ml-auto">.col-md-6 .ml-auto</div>
+              </div>
+              <div class="row">
+                <div class="col-sm-9">
+                  Level 1: .col-sm-9
+                  <div class="row">
+                    <div class="col-8 col-sm-6">
+                      Level 2: .col-8 .col-sm-6
+                    </div>
+                    <div class="col-4 col-sm-6">
+                      Level 2: .col-4 .col-sm-6
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- Modal Ends-->

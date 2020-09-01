@@ -1,8 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
-html{
-    background: linear-gradient(to right top, rgb(60, 195, 240), rgb(50, 158, 50));
-}
+
 html,body{
+    background: linear-gradient(to right top, rgb(60, 195, 240), rgb(50, 158, 50)) !important;
     height:100%;
     margin:0px;
 }
+.btn-circle.btn-sm { 
+    width: 30px; 
+    height: 30px; 
+    padding: 6px 0px; 
+    border-radius: 15px; 
+    font-size: 8px; 
+    text-align: center; 
+} 
+.btn-circle.btn-md { 
+    width: 40px; 
+    height: 40px; 
+    border-radius: 20px; 
+    text-align: center; 
+    font-size: 1rem;
+} 
+.btn-circle.btn-xl { 
+    width: 70px; 
+    height: 70px; 
+    padding: 10px 16px; 
+    border-radius: 35px; 
+    font-size: 12px; 
+    text-align: center; 
+} 
