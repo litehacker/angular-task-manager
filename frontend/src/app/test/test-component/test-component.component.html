@@ -1,1 +1,10 @@
-<p>test-component works!</p>
+<div>
+    <input type="text" [(ngModel)]="name"/>
+    <p>welcome {{name}}</p>
+
+    <input type="text" [ngModel]="inputInteraction" (ngModelChange)="greetUser($event)"/>
+    <p>Custom Event Update {{inputInteraction}}</p>
+
+    <input #nameRef type="text" [(ngModel)]="name"/>
+    <p>Element Ref {{name}}</p>
+</div>

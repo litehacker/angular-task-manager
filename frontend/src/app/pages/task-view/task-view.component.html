@@ -6,7 +6,6 @@
             <li class="py-3 pr-3"><a class="btn btn-outline-light btn-lg" data-toggle="tab" href="#monthly">Aylık</a></li>
         </ul>
         <ul class="nav ml-auto">
-            
             <li class=""><a class="btn btn-outline-light btn-circle btn-xl font-weight-bold" data-toggle="modal" data-target="#newTaskModal">+</a></li>
         </ul>
     </div>
@@ -17,9 +16,8 @@
             </div>
             <div class="card-deck mb-3 text-center pt-3" style="height:100%; position: relative;">
                 <!-- Component of a task starts here-->
-                <app-task-card></app-task-card>
-                <app-task-card></app-task-card>
-                <app-task-card></app-task-card>
+                <app-task-card [sampleTaskChild]="sampleTaskParent"></app-task-card>
+                <app-task-card [sampleTaskChild]="{title:'Geliştirme', description:'Tasarımı kodlama görevi', complited:false, img:'Geliştirme'}"></app-task-card>
                 <!-- Component of a task ENDS here-->
             </div>
         </div>
@@ -28,32 +26,8 @@
                 <h3>Bu Hafta İçinde Yapılacak Görevler</h3>
             </div>
             <div class="card-deck mb-3 text-center pt-3">
-                <!-- Component of a task starts here-->
-                <div class="card mb-4 box-shadow task" style="min-width: 15rem; max-width: 15rem;">
-                    <div class="card-header">
-                        <img src="../../../assets/img/undraw_detailed_analysis_xn7y.svg" class="card-img-top"  style="max-height: 100px;" alt="gorev gorseli"/>
-                    </div>
-                    <div class="card-body d-flex flex-column">  
-                        <h6 class="font-weight-light text-secondary">2 days left</h6>
-                        <h2 class="card-title ">Gorev Basligi</h2>
-                        <p>Bu gorev icerigi ve kisa aciklamasidir.</p>
-                        <button type="button" class="btn btn-lg btn-block btn-outline-primary mt-auto">Incele</button>
-                    </div>
-                </div>    
-                <!-- Component of a task ENDS here-->
-                <!-- Component of a task starts here-->
-                <div class="card mb-4 box-shadow task" style="min-width: 15rem; max-width: 15rem;">
-                    <div class="card-header">
-                        <img src="../../../assets/img/undraw_detailed_analysis_xn7y.svg" class="card-img-top"  style="max-height: 100px;" alt="gorev gorseli"/>
-                    </div>
-                    <div class="card-body d-flex flex-column">  
-                        <h6 class="font-weight-light text-secondary">2 days left</h6>
-                        <h2 class="card-title ">Gorev Basligi</h2>
-                        <p>Bu gorev icerigi ve kisa aciklamasidir.</p>
-                        <button type="button" class="btn btn-lg btn-block btn-outline-primary mt-auto">Incele</button>
-                    </div>
-                </div>    
-                <!-- Component of a task ENDS here-->
+                <app-task-card [sampleTaskChild]="sampleTaskParent"></app-task-card>
+                <app-task-card [sampleTaskChild]="sampleTaskParent"></app-task-card>
             </div>
         </div>
         <div id="monthly" class="tab-pane fade ">
@@ -61,32 +35,8 @@
                 <h3>Bu Ay İçinde Yapılacak Görevler</h3>
             </div>
             <div class="card-deck mb-3 text-center pt-3">
-                <!-- Component of a task starts here-->
-                <div class="card mb-4 box-shadow task" style="min-width: 15rem; max-width: 15rem;">
-                    <div class="card-header">
-                        <img src="../../../assets/img/undraw_detailed_analysis_xn7y.svg" class="card-img-top"  style="max-height: 100px;" alt="gorev gorseli"/>
-                    </div>
-                    <div class="card-body d-flex flex-column">  
-                        <h6 class="font-weight-light text-secondary">2 days left</h6>
-                        <h2 class="card-title ">Gorev Basligi</h2>
-                        <p>Bu gorev icerigi ve kisa aciklamasidir.</p>
-                        <button type="button" class="btn btn-lg btn-block btn-outline-primary mt-auto">Incele</button>
-                    </div>
-                </div>    
-                <!-- Component of a task ENDS here-->
-                <!-- Component of a task starts here-->
-                <div class="card mb-4 box-shadow task" style="min-width: 15rem; max-width: 15rem;">
-                    <div class="card-header">
-                        <img src="../../../assets/img/undraw_detailed_analysis_xn7y.svg" class="card-img-top"  style="max-height: 100px;" alt="gorev gorseli"/>
-                    </div>
-                    <div class="card-body d-flex flex-column">  
-                        <h6 class="font-weight-light text-secondary">2 days left</h6>
-                        <h2 class="card-title ">Gorev Basligi</h2>
-                        <p>Bu gorev icerigi ve kisa aciklamasidir.</p>
-                        <button type="button" class="btn btn-lg btn-block btn-outline-primary mt-auto">Incele</button>
-                    </div>
-                </div>    
-                <!-- Component of a task ENDS here-->
+                <app-task-card [sampleTaskChild]="sampleTaskParent"></app-task-card>
+                <app-task-card [sampleTaskChild]="sampleTaskParent"></app-task-card>
             </div>
         </div>
         <app-test-component></app-test-component>
@@ -123,3 +73,4 @@
     </div>
   </div>
 <!-- Modal Ends-->
+

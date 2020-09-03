@@ -4,7 +4,9 @@ type TaskType = {
   title:string,
   description:string,
   deadline:Date,
-  complited:boolean
+  complited:boolean,
+  img:string,
+  id:string
 }
 
 @Component({
@@ -13,15 +15,16 @@ type TaskType = {
   styleUrls: ['./task-view.component.css']
 })
 
-
 export class TaskViewComponent implements OnInit {
 
   constructor() {
-    let today = new Date();
-    let sampleTask: TaskType = {title:'this is a default title', description:'this a description string', deadline:today, complited:false};
-   }
+    
+  }
+
+  sampleTaskParent: TaskType = {title:'this is a default title', description:'this a description string', deadline:new Date(), complited:false, img:'Diğer', id:"0000"};
 
   ngOnInit(): void {
   }
+  
 
 }
