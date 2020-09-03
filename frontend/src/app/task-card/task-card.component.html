@@ -1,0 +1,16 @@
+<!-- Component of a task starts here-->
+<div class="card mb-4 box-shadow task" style="min-width: 20rem; max-width: 20rem;">
+    <div class="card-header {{checkTaskActive() ? 'active-task' : ''}}">
+        <img src="../../../assets/img/undraw_detailed_analysis_xn7y.svg" class="card-img-top"  style="max-height: 100px;" alt="gorev gorseli"/>
+    </div>
+    <div class="card-body d-flex flex-column {{checkTaskActive() ? '' : 'completed'}}">  
+        <h6 class="font-weight-light text-secondary">{{deadline}}</h6>
+        <h2 class="card-title ">{{getTaskTitle()}}</h2>
+        <p>{{getTaskDesc()}}</p>
+    </div>
+    <div class="col-12">    
+        <button type="button" class="btn btn-lg btn-block btn-info mt-auto mb-2">INCELE</button>
+        <button type="button" (click)="checkTaskActive() ? taskActiveFalse() : taskActiveTrue()" class="btn btn-lg btn-block btn-outline-primary mt-auto mb-2">{{checkTaskActive() ? 'YAPTIM' : 'YAPMADIM'}}</button>
+    </div>
+</div>    
+<!-- Component of a task ENDS here-->

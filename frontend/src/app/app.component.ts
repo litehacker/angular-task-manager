@@ -11,7 +11,6 @@ export class AppComponent {
   date = new Date();
 
   constructor(){
-    console.log('this is a constructor call.');
   }
 
   getOwner():string{
