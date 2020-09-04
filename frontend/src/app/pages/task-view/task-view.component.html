@@ -16,8 +16,45 @@
             </div>
             <div class="card-deck mb-3 text-center pt-3" style="height:100%; position: relative;">
                 <!-- Component of a task starts here-->
-                <app-task-card [sampleTaskChild]="sampleTaskParent"></app-task-card>
-                <app-task-card [sampleTaskChild]="{title:'Geliştirme', description:'Tasarımı kodlama görevi', complited:false, img:'Geliştirme'}"></app-task-card>
+                <!-- Component of a task starts here-->
+                <div *ngFor="let item of dailyTaskList">
+                    <div class="card mb-4 box-shadow task" style="min-width: 20rem; max-width: 20rem;">
+                        <div class="card-header {{item.complited ? '' : 'active-task'}}">
+                            <img src="../../../assets/img/{{item.img}}.svg" class="card-img-top" alt="gorev gorseli"  style="max-height: 100px;"/>
+                        </div>
+                        <div class="card-body d-flex flex-column {{!item.complited ? '' : 'completed'}}">  
+                            <h2 class="card-title ">{{item.title}}</h2>
+                            <p>{{item.description}}</p>
+                        </div>
+                        <div class="col-12">    
+                            <button type="button" class="btn btn-lg btn-block btn-info mt-auto mb-2" data-toggle="modal" [attr.data-target]="'#' + item.id">INCELE</button>
+                            <button type="button"  class="btn btn-lg btn-block btn-outline-primary mt-auto mb-2" (click)="!item.complited ? taskCompleted(item.id):taskNotCompleted(item.id)"> <i class="{{!item.complited ? 'fa fa-calendar-check-o' : 'fa fa-minus-circle'}}" aria-hidden="true">{{!item.complited ? 'YAPTIM' : 'YAPMADIM'}}</i></button>
+                            <button type="button"  class="btn btn-lg btn-block btn-outline-danger mt-auto mb-2" (click)="deleteItem(item.id)"> <i class="fa fa-trash"> Sil</i></button>
+                        </div>
+                    </div>  
+                                    
+                    <!-- MODAL module-->
+                    <div class="modal fade" [attr.id]="item.id" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">{{item.title}}</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body content">
+                                    <p>{{item.description}}</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal Ends-->  
+                </div>
+                <!-- Component of a task ENDS here-->
                 <!-- Component of a task ENDS here-->
             </div>
         </div>
@@ -26,8 +63,43 @@
                 <h3>Bu Hafta İçinde Yapılacak Görevler</h3>
             </div>
             <div class="card-deck mb-3 text-center pt-3">
-                <app-task-card [sampleTaskChild]="sampleTaskParent"></app-task-card>
-                <app-task-card [sampleTaskChild]="sampleTaskParent"></app-task-card>
+                <div *ngFor="let item of weeklyTaskList">
+                    <div class="card mb-4 box-shadow task" style="min-width: 20rem; max-width: 20rem;">
+                        <div class="card-header {{item.complited ? '' : 'active-task'}}">
+                            <img src="../../../assets/img/{{item.img}}.svg" class="card-img-top" alt="gorev gorseli"  style="max-height: 100px;"/>
+                        </div>
+                        <div class="card-body d-flex flex-column {{!item.complited ? '' : 'completed'}}">  
+                            <h2 class="card-title ">{{item.title}}</h2>
+                            <p>{{item.description}}</p>
+                        </div>
+                        <div class="col-12">    
+                            <button type="button" class="btn btn-lg btn-block btn-info mt-auto mb-2" data-toggle="modal" [attr.data-target]="'#' + item.id">INCELE</button>
+                            <button type="button"  class="btn btn-lg btn-block btn-outline-primary mt-auto mb-2" (click)="!item.complited ? weeklyTaskCompleted(item.id) : weeklyTaskNotCompleted(item.id)"> <i class="{{!item.complited ? 'fa fa-calendar-check-o' : 'fa fa-minus-circle'}}" aria-hidden="true">{{!item.complited ? 'YAPTIM' : 'YAPMADIM'}}</i></button>
+                            <button type="button"  class="btn btn-lg btn-block btn-outline-danger mt-auto mb-2" (click)="deleteWeeklyItem(item.id)"> Sil</button>
+                        </div>
+                    </div>  
+                                    
+                    <!-- MODAL module-->
+                    <div class="modal fade" [attr.id]="item.id" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">{{item.title}}</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body content">
+                                    <p>{{item.description}}</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal Ends-->  
+                </div>
             </div>
         </div>
         <div id="monthly" class="tab-pane fade ">
@@ -35,11 +107,45 @@
                 <h3>Bu Ay İçinde Yapılacak Görevler</h3>
             </div>
             <div class="card-deck mb-3 text-center pt-3">
-                <app-task-card [sampleTaskChild]="sampleTaskParent"></app-task-card>
-                <app-task-card [sampleTaskChild]="sampleTaskParent"></app-task-card>
+                <div *ngFor="let item of monthlyTaskList">
+                    <div class="card mb-4 box-shadow task" style="min-width: 20rem; max-width: 20rem;">
+                        <div class="card-header {{item.complited ? '' : 'active-task'}}">
+                            <img src="../../../assets/img/{{item.img}}.svg" class="card-img-top" alt="gorev gorseli"  style="max-height: 100px;"/>
+                        </div>
+                        <div class="card-body d-flex flex-column {{!item.complited ? '' : 'completed'}}">  
+                            <h2 class="card-title ">{{item.title}}</h2>
+                            <p>{{item.description}}</p>
+                        </div>
+                        <div class="col-12">    
+                            <button type="button" class="btn btn-lg btn-block btn-info mt-auto mb-2" data-toggle="modal" [attr.data-target]="'#' + item.id">INCELE</button>
+                            <button type="button"  class="btn btn-lg btn-block btn-outline-primary mt-auto mb-2" (click)="!item.complited ? monthlyTaskCompleted(item.id):monthlyTaskNotCompleted(item.id)"> <i class="{{!item.complited ? 'fa fa-calendar-check-o' : 'fa fa-minus-circle'}}" aria-hidden="true">{{!item.complited ? 'YAPTIM' : 'YAPMADIM'}}</i></button>
+                            <button type="button"  class="btn btn-lg btn-block btn-outline-danger mt-auto mb-2" (click)="deleteMonthlyItem(item.id)"> Sil</button>
+                        </div>
+                    </div>  
+                                    
+                    <!-- MODAL module-->
+                    <div class="modal fade" [attr.id]="item.id" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">{{item.title}}</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body content">
+                                    <p>{{item.description}}</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal Ends-->  
+                </div>
             </div>
         </div>
-        <app-test-component></app-test-component>
     </div>
 </div>
 
@@ -54,20 +160,46 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form>
-                    <div class="form-group">
-                        <label for="title" class="col-form-label">Görev Başlığı</label>
-                        <input type="text" class="form-control" id="recipient-name">
-                    </div>
-                    <div class="form-group">
-                        <label for="message-text" class="col-form-label">Açıklaması</label>
-                        <textarea class="form-control" id="message-text"></textarea>
-                    </div>
-                </form>
+                <p>Görev Zamanlamasını Seçin:</p>
+                <div>
+                    <input type="radio" id="huey" name="deadline" value="Günlük" [(ngModel)]="taskDeadline">
+                    <label for="huey">Günlük</label>
+                </div>
+                <div>
+                    <input type="radio" id="dewey" name="deadline" value="Haftalık" [(ngModel)]="taskDeadline">
+                    <label for="dewey">Haftalık</label>
+                </div>
+                <div>
+                    <input type="radio" id="louie" name="deadline" value="Aylık" [(ngModel)]="taskDeadline">
+                    <label for="louie">Aylık</label>
+                </div>
+                
+                <div class="form-group">
+                    <label for="img">Example multiple select</label>
+                    <select multiple class="form-control" id="img" [(ngModel)]="taskImg">
+                        <option value="Geliştirme">Geliştirme</option>
+                        <option value="Raporlama">Raporlama</option>
+                        <option value="Tasarım">Tasarım</option>
+                        <option value="Toplantı">Toplantı</option>
+                        <option value="Diğer">Diğer</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="title" class="col-form-label">Görev Başlığı</label>
+                    <input type="text" class="form-control" 
+                    [(ngModel)]="taskTitle" 
+                    />
+                </div>
+                <div class="form-group">
+                    <label for="message-text" class="col-form-label">Açıklaması</label>
+                    <textarea class="form-control" 
+                    [(ngModel)]="taskDescription" 
+                    ></textarea>
+                </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-primary" (click)="addTask()">Save changes</button>
             </div>
         </div>
     </div>

@@ -12,7 +12,7 @@ type TaskType = {
 function generateID(): string {
   //generate ID
   var result           = '';
-  var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
   var charactersLength = characters.length;
   for ( var i = 0; i < 5; i++ ) {
       result += characters.charAt(Math.floor(Math.random() * charactersLength));
@@ -28,10 +28,10 @@ function generateID(): string {
 
 export class TaskCardComponent implements OnInit {
 
-  @Input() sampleTaskChild:TaskType;
+  sampleTaskChild:TaskType = {title:'this is a default title', description:'this a description string', deadline:new Date(), complited:false, img:'Diğer', id:generateID()};
 
   constructor() {
-    console.log(this.sampleTaskChild)
+    console.log(this.sampleTaskChild.id)
   }
 
   // Change Tasks states
