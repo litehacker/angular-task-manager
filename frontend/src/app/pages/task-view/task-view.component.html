@@ -160,22 +160,22 @@
                 </button>
             </div>
             <div class="modal-body">
-                <p>Görev Zamanlamasını Seçin:</p>
-                <div>
+                <p class="lead">Görev Zamanlamasını Seçin:</p>
+                <label class="radio-inline pr-2"  for="huey">
                     <input type="radio" id="huey" name="deadline" value="Günlük" [(ngModel)]="taskDeadline">
-                    <label for="huey">Günlük</label>
-                </div>
-                <div>
+                    Günlük
+                </label>
+                <label class="radio-inline pr-2" for="dewey">
                     <input type="radio" id="dewey" name="deadline" value="Haftalık" [(ngModel)]="taskDeadline">
-                    <label for="dewey">Haftalık</label>
-                </div>
-                <div>
+                    Haftalık
+                </label>
+                <label class="radio-inline pr-2" for="louie">
                     <input type="radio" id="louie" name="deadline" value="Aylık" [(ngModel)]="taskDeadline">
-                    <label for="louie">Aylık</label>
-                </div>
+                    Aylık
+                </label>
                 
                 <div class="form-group">
-                    <label for="img">Example multiple select</label>
+                    <label for="img" class="lead">Görev Türünü Seçin</label>
                     <select multiple class="form-control" id="img" [(ngModel)]="taskImg">
                         <option value="Geliştirme">Geliştirme</option>
                         <option value="Raporlama">Raporlama</option>
