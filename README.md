@@ -1,5 +1,7 @@
 # angular-task-manager
-This is a task manager fully functional on Angular framework. This means no databese is used and data will be lost whenever a page is refreshed.
+This is a task manager fully functional on Angular framework. This means no databese is used and data will be lost whenever a page is refreshed.  
+Result:  
+![Angular Gorev Yoneticisi](/additional-media/Angular-Gorev-Yoneticisi.png)
 # instalation
 clone repository:  
 `git clone https://github.com/litehacker/angular-task-manager`  
@@ -9,8 +11,6 @@ install npm packages:
 `npm install`  
 run the app:  
 `npm start`  
-Resull:  
-![Angular Gorev Yoneticisi](/additional-media/Angular-Gorev-Yoneticisi.png)
 # usage
 add task by pressing `+` in the top right.  
 choose the deadline of the task as: daily, weekly, monthly. default is daily    
