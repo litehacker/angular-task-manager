@@ -10,7 +10,7 @@ install npm packages:
 run the app:  
 `npm start`  
 Resull:  
-[Angular Gorev Yoneticisi](/additional-media/Angular-Gorev-Yoneticisi.png)
+![Angular Gorev Yoneticisi](/additional-media/Angular-Gorev-Yoneticisi.png)
 # usage
 add task by pressing `+` in the top right.  
 choose the deadline of the task as: daily, weekly, monthly. default is daily    
